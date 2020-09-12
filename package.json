@@ -33,6 +33,11 @@
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5"
+    "@babel/preset-env": "^7.11.5",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.2",
+    "supertest": "^4.0.2"
   }
 }
