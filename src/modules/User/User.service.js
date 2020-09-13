@@ -1,28 +1,28 @@
 class User {
+  constructor() {
+    this.userDb = [
+      {
+        email: 'testuser@testdomain.com',
+        password: 'testpassword1',
+      },
+    ];
+  }
 
-    constructor(props) {
-        this.userDb = [
-            {
-                username: 'testuser1',
-                password: 'testpassword1'
-            }
-        ]
-    }
+  async validate(userInformation) {
+    const { username, password } = userInformation;
 
-    async validate(userInformation) {
-        const {username, password} = userInformation;
+    if (!username || !password) return undefined;
 
-        if (!username || !password) return undefined;
-
-        return (
-            this.userDb
-                .find(
-                    dbUser =>
-                        dbUser.username === username &&
-                        dbUser.password === password
-                )
+    return (
+      this.userDb
+        .find(
+          (dbUser) => (
+            dbUser.email === username
+                && dbUser.password === password
+          ),
         )
-    }
+    );
+  }
 }
 
-export default User
+export default new User();

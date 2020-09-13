@@ -1,3 +1,3 @@
-import UserService from './User.service'
+import UserService from './User.service';
 
-export default new UserService()
+export default UserService;
