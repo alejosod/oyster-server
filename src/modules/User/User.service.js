@@ -1,26 +1,22 @@
+import bcrypt from 'bcrypt';
+
 class User {
   constructor() {
     this.userDb = [
       {
-        email: 'testuser@testdomain.com',
-        password: 'testpassword1',
+        username: 'test-user',
+        password: bcrypt.hashSync('testPassword', parseInt(process.env.BCRYPT_ROUNDS, 10)),
       },
     ];
   }
 
-  async validate(userInformation) {
-    const { username, password } = userInformation;
-
-    if (!username || !password) return undefined;
+  async findByName(username) {
+    console.log('here user');
+    if (!username) return undefined;
 
     return (
       this.userDb
-        .find(
-          (dbUser) => (
-            dbUser.email === username
-                && dbUser.password === password
-          ),
-        )
+        .find((dbUser) => dbUser.username === username)
     );
   }
 }

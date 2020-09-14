@@ -1,17 +1,8 @@
 import express from 'express';
-import UserService from '../User';
+import AuthService from './Auth.service';
 
 const authController = express.Router();
 
-const postAuth = async (req, res) => {
-  const {
-    body: {
-      email,
-      password,
-    },
-  } = req;
+authController.post('/login', AuthService.login);
 
-  if (!email || !password) res.status(401).send();
-
-  const user = UserService.validate({ email, password })
-};
+export default authController;

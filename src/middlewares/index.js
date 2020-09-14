@@ -1,5 +1,11 @@
-import checkSignIn from "./checkSignIn";
+import checkSignIn from './checkSignIn';
+import errorConfiguration from './errorConfiguration';
+import notFound from './notFound';
+import handleErrors from './handleErrors';
 
 export {
-    checkSignIn
-}
+  checkSignIn,
+  errorConfiguration,
+  notFound,
+  handleErrors,
+};

@@ -2,7 +2,7 @@ export default {
   login: {
     incorrectPassword: {
       message: 'Incorrect Password.',
-      status: 400,
+      statusCode: 400,
     },
     emailNotFound: {
       message: 'Email do not exists.',
@@ -16,13 +16,17 @@ export default {
   authorization: {
     notAuthorized: {
       message: 'User is not authorized.',
-      status: 401,
+      statusCode: 401,
     },
   },
   general: {
     badRequest: {
       message: 'One or more parameters are incorrect.',
-      status: 400,
+      statusCode: 400,
+    },
+    notFound: {
+      message: 'Route not found.',
+      statusCode: 404,
     },
   },
 
